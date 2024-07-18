@@ -19,6 +19,7 @@ jobs:
     - name: Deploy via GCS
       working-directory: /var/www/html
       run: |
+        pwd
         git --version
         git checkout main
         git pull origin main
