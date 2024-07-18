@@ -21,5 +21,6 @@ jobs:
       run: |
         pwd
         git --version
-        git checkout main
+        git init .
+        git remote add origin https://github.com/nagarajc88/sigma-soft-venue-website.git
         git pull origin main
