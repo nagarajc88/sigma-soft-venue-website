@@ -4,14 +4,11 @@ on:
     branches: [main]
 
 jobs:
-
-
-  job_id:
+  build:
+    runs-on: 'ubuntu-latest'
     permissions:
       contents: 'read'
       id-token: 'write'
-  build:
-    runs-on: 'ubuntu-latest'
     steps:
     - uses: 'actions/checkout@v4'
 
