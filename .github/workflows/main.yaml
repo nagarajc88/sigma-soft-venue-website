@@ -17,13 +17,9 @@ jobs:
         project_id: sigma-soft-venue-01-429804
 
     - name: Deploy via GCS
-      run: |
-        sudo chmod  777 -R /var/www/html
-
       working-directory: /var/www/html
       run: |
-        pwd
-        git --version
+        sudo chmod  777 -R /var/www/html
         git init .
         git remote add origin https://github.com/nagarajc88/sigma-soft-venue-website.git
         git pull origin main
