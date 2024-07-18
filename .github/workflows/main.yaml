@@ -21,6 +21,7 @@ jobs:
       uses: 'google-github-actions/ssh-compute@v1'
       with:
         instance_name: 'sigma-soft-venue-website-01'
+        user: 'nagarajc1988'
         zone: 'asia-south1-c'
         ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
         command: 'echo Hello world'
