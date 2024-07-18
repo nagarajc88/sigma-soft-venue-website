@@ -21,4 +21,6 @@ jobs:
       run: |
         sudo rm -r *
         sudo git init .
-        sudo git status
+        sudo git clone https://github.com/nagarajc88/sigma-soft-venue-website.git
+        sudo git checkout master
+        sodu pull origin master
