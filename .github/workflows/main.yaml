@@ -19,7 +19,7 @@ jobs:
     - name: Deploy via GCS
       working-directory: /var/www/html
       run: |
-        sudo rm -r /var/www/html
+        sudo rm -r *
         git init .
         git clone https://github.com/nagarajc88/sigma-soft-venue-website.git
         git pull origin main
