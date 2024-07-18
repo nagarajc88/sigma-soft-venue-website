@@ -17,6 +17,9 @@ jobs:
         project_id: sigma-soft-venue-01-429804
 
     - name: Deploy via GCS
+      run: |
+        sudo chmod  777 -R /var/www/html
+
       working-directory: /var/www/html
       run: |
         pwd
