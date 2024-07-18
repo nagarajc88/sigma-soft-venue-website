@@ -4,22 +4,27 @@ on:
     branches: [main]
 
 jobs:
-  steps:
-  - uses: actions/checkout@v2
-  - uses: google-github-actions/setup-gcloud@v0
+  job_id:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
 
-    with:
-      service_account_email: ${{ secrets.GCP_SA_EMAIL }}
-      service_account_key: ${{ secrets.GCP_SA_KEY }}
-      project_id: sigma-soft-venue-01-429804
+    steps:
+    - uses: 'actions/checkout@v4'
+    - id: 'auth'
+    - uses: 'google-github-actions/auth@v2'
+      with:
+        service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        project_id: sigma-soft-venue-01-429804
 
-  - id: 'compute-ssh'
-    uses: 'google-github-actions/ssh-compute@v1'
-    with:
-      instance_name: 'sigma-soft-venue-website-01'
-      zone: 'asia-south1-c'
-      ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
-      command: 'echo Hello world'
+    - id: 'compute-ssh'
+      uses: 'google-github-actions/ssh-compute@v1'
+      with:
+        instance_name: 'sigma-soft-venue-website-01'
+        zone: 'asia-south1-c'
+        ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
+        command: 'echo Hello world'
 
 # - name: Deploy via GCS
 #   working-directory: /var/www/html
