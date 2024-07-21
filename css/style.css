@@ -1,6 +1,11 @@
 
 /*** Spinner Start ***/
 /*** Spinner ***/
+:root {
+    --bs-primary: rgb(41, 231, 120);
+}
+
+
 #spinner {
     opacity: 0;
     visibility: hidden;

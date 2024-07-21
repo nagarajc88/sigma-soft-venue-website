@@ -1,3 +1,11 @@
 .bg-color{
     background-color: ghostwhite;
 }
+
+.custom-btn-color{
+    background: rgb(41, 231, 120);
+}
+
+.text-primary{
+    color: rgb(41, 231, 120) !important; 
+}
